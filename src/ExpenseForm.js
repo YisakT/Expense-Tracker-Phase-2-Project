@@ -1,48 +1,86 @@
-import React, { useState } from "react";
-interface Expense {
-  description: string;
-  amount: number;
-}
+import React, { useState, useContext } from 'react';
+import { ExpenseContext } from './ExpenseProvider';
 
-interface Props {
-  addExpense: (expense: Expense) => void;
-}
+const ExpenseForm = () => {
+  const { addExpense } = useContext(ExpenseContext);
 
-const ExpenseForm: React.FC<Props> = ({ addExpense }) => {
-  const [description, setDescription] = useState("");
-  const [amount, setAmount] = useState("");
+  const [formState, setFormState] = useState({
+    description: '',
+    amount: '',
+    classification: '',
+    receiptAvailable: false,
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (description.trim() !== "" && amount !== "") {
-      const expense = {
-        description,
-        amount: parseFloat(amount),
-      };
-      addExpense(expense);
-      setDescription("");
-      setAmount("");
-    }
+  const handleInputChange = (event) => {
+    setFormState({
+      ...formState,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleCheckboxChange = (event) => {
+    setFormState({
+      ...formState,
+      [event.target.name]: event.target.checked,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addExpense(formState);
+    setFormState({
+      description: '',
+      amount: '',
+      classification: '',
+      receiptAvailable: false,
+    });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Amount"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-      />
+      <label>
+        Description:
+        <input
+          name="description"
+          type="text"
+          value={formState.description}
+          onChange={handleInputChange}
+        />
+      </label>
+
+      <label>
+        Amount:
+        <input
+          name="amount"
+          type="number"
+          value={formState.amount}
+          onChange={handleInputChange}
+        />
+      </label>
+
+      <label>
+        Classification:
+        <input
+          name="classification"
+          type="text"
+          value={formState.classification}
+          onChange={handleInputChange}
+        />
+      </label>
+
+      <label>
+        Receipt Available:
+        <input
+          name="receiptAvailable"
+          type="checkbox"
+          checked={formState.receiptAvailable}
+          onChange={handleCheckboxChange}
+        />
+      </label>
+
       <button type="submit">Add Expense</button>
     </form>
   );
-}
+};
 
 export default ExpenseForm;
-

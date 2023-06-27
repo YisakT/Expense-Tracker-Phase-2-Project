@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ExpenseProvider } from './ExpenseProvider';
 import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ExpenseProvider>
+      <App />
+    </ExpenseProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
-

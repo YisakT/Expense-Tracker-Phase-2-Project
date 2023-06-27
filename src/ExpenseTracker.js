@@ -1,22 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import ExpenseForm from "./ExpenseForm";
 import ExpenseList from "./ExpenseList";
 import BudgetForm from "./BudgetForm";
 import ExpenseSummary from "./ExpenseSummary.js";
+import { ExpenseContext } from './ExpenseProvider';
 
 function ExpenseTracker() {
-  const [expenses, setExpenses] = useState([]);
-  const [budget, setBudget] = useState(0);
-
-  const addExpense = (expense) => {
-    setExpenses([...expenses, expense]);
-  };
-
-  const deleteExpense = (index) => {
-    const updatedExpenses = [...expenses];
-    updatedExpenses.splice(index, 1);
-    setExpenses(updatedExpenses);
-  };
+  const { expenses, addExpense, deleteExpense, budget, setBudget } = useContext(ExpenseContext);
 
   const totalExpenses = expenses.reduce(
     (total, expense) => total + parseFloat(expense.amount),
@@ -36,7 +26,7 @@ function ExpenseTracker() {
       <BudgetForm setBudget={setBudget} />
 
       <h2>Add Expense</h2>
-      <ExpenseForm addExpense={addExpense} />
+      <ExpenseForm />
 
       <h2>Expenses</h2>
       <ExpenseList expenses={expenses} deleteExpense={deleteExpense} />
