@@ -1,6 +1,6 @@
-# Phase-2-project
+# Expense Tracker Phase 2 Project
 
-Expense Tracker
+
 
 Expense Tracker is a web application that helps you manage your expenses and track your budget effectively. With Expense Tracker, you can easily add and categorize your expenses, monitor your spending, and stay within your budget.
 
