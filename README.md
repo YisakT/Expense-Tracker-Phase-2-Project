@@ -17,12 +17,14 @@ https://github.com/YisakT/Expense-Tracker-Phase-2-Project-Backend
 
 ## Follow these steps to set up the Expense Tracker application:
 
-Clone the repository: git clone https://github.com/your-username/expense-tracker.git
+Clone the repository: git clone [https://github.com/your-username/expense-tracker.git](https://github.com/YisakT/Expense-Tracker-Phase-2-Project)
 Navigate to the project directory: cd expense-tracker
 Install the dependencies: npm install
 Start the application: npm start
 Open your web browser and access the application at http://localhost:3000
-Technologies Used
+
+## Technologies Used
+
 React: JavaScript library for building user interfaces
 React Router: Library for handling routing in React applications
 Context API: For managing state and data across components
