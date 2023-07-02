@@ -1,8 +1,11 @@
 
+
+
 import React, { useContext } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import ExpenseSummary from "./ExpenseSummary.js";
 import { ExpenseContext } from './ExpenseProvider';
+import budgetBackgroundImage from './images/budget-word-on-white-block.jpg';
 
 function BudgetBreakdownPage() {
   const { expenses, budget } = useContext(ExpenseContext);
@@ -20,7 +23,7 @@ function BudgetBreakdownPage() {
   const colors = ["#FF5722", "#3F51B5"];
 
   return (
-    <div>
+    <div style={{ backgroundImage: `url(${budgetBackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh' }}>
       <h1>Budget Breakdown Page</h1>
       <ExpenseSummary
         totalExpenses={totalExpenses}
@@ -36,9 +39,18 @@ function BudgetBreakdownPage() {
           </Pie>
         </PieChart>
       </ResponsiveContainer>
+
+      <style>{`
+        h1, h2, h3 {
+          color: white;
+        }
+      `}</style>
     </div>
   );
 }
 
 export default BudgetBreakdownPage;
+
+
+// export default BudgetBreakdownPage;
 
