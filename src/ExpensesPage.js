@@ -1,6 +1,9 @@
+
+
 import React, { useState, useContext } from 'react';
 import { ExpenseContext } from './ExpenseProvider';
 import './ExpensePage.css';
+import expenseBackgroundImage from './images/money-finances.jpg';
 
 function ExpensePage() {
   const [description, setDescription] = useState('');
@@ -66,6 +69,14 @@ function ExpensePage() {
 
         <div className="background-image"></div>
       </div>
+
+      <style>{`
+        .ExpensePage {
+          background-image: url(${expenseBackgroundImage});
+          background-size: cover;
+          background-position: center;
+        }
+      `}</style>
     </div>
   );
 }

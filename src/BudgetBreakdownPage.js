@@ -13,13 +13,12 @@ function BudgetBreakdownPage() {
   const totalExpenses = expenses.reduce((total, expense) => total + parseFloat(expense.amount), 0);
   const remainingBudget = budget - totalExpenses;
 
-  // Prepare data for the pie chart
+
   const data = [
     { name: "Total Expenses", value: totalExpenses },
     { name: "Remaining Budget", value: remainingBudget },
   ];
 
-  // Define custom colors for the pie chart
   const colors = ["#FF5722", "#3F51B5"];
 
   return (
@@ -52,5 +51,4 @@ function BudgetBreakdownPage() {
 export default BudgetBreakdownPage;
 
 
-// export default BudgetBreakdownPage;
 
