@@ -6,13 +6,21 @@ function HomePage() {
   const divStyle = {
     backgroundColor: "#85bb65",
     padding: "20px",
+    textAlign: "center",
+  };
+
+  const imageStyle = {
+    maxWidth: "100%",
+    height: "auto",
+    borderRadius: "8px",
+    marginTop: "20px",
   };
 
   return (
     <div style={divStyle}>
-      <h1>Welcome to Expense Tracker App</h1>
-      <img src={image1} alt="Description of image 1" style={{width: '100%', height: 'auto'}}/>
-      <img src={image2} alt="Description of image 2" style={{width: '100%', height: 'auto'}}/>
+      <h1 style={{ color: "#fff" }}>Welcome to the Expense Tracker App</h1>
+      <img src={image1} alt="Description of image 1" style={imageStyle} />
+      <img src={image2} alt="Description of image 2" style={imageStyle} />
     </div>
   );
 }
