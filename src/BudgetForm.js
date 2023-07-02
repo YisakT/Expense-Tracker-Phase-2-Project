@@ -1,19 +1,21 @@
+
 import React, { useState } from "react";
 
 interface Props {
-  setBudget: (value: number) => void;
+  updateBudget: (value: number) => void;
 }
 
-const BudgetForm: React.FC<Props> = ({ setBudget }) => {
+const BudgetForm: React.FC<Props> = ({ updateBudget }) => {
   const [budget, setBudgetValue] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (budget !== "" && !isNaN(Number(budget))) {
-      setBudget(parseFloat(budget));
+      updateBudget(parseFloat(budget));
       setBudgetValue("");
     }
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <input
