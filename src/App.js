@@ -9,11 +9,11 @@ import ExpenseSummary from './ExpenseSummary.js';
 function App() {
   return (
     <Router>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/expenses">Expenses</Link>
-        <Link to="/budget">Budget</Link>
-        <Link to="/tracker">Tracker</Link>
+      <nav style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1em' }}>
+        <Link to="/" style={linkStyle}>Home</Link>
+        <Link to="/tracker" style={linkStyle}>Tracker</Link>
+        <Link to="/expenses" style={linkStyle}>Expenses</Link>
+        <Link to="/budget" style={linkStyle}>Budget</Link>
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -26,7 +26,18 @@ function App() {
   );
 }
 
+// Custom styles for the navigation links
+const linkStyle = {
+  color: '#fff',
+  textDecoration: 'none',
+  padding: '0.5em 1em',
+  backgroundColor: '#333',
+  borderRadius: '4px',
+  marginRight: '0.5em',
+};
+
 export default App;
+
 
 
 
