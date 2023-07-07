@@ -1,6 +1,4 @@
 import React from "react";
-import image1 from './images/image1.jpg';
-import image2 from './images/image2.jpg';
 
 function HomePage() {
   const divStyle = {
@@ -19,8 +17,8 @@ function HomePage() {
   return (
     <div style={divStyle}>
       <h1 style={{ color: "#fff" }}>Welcome to the Expense Tracker App</h1>
-      <img src={image1} alt="Description of image 1" style={imageStyle} />
-      <img src={image2} alt="Description of image 2" style={imageStyle} />
+      <img src="https://drive.google.com/uc?export=view&id=1RqkejNE8SRI4MMsWiyFMzKB8kReaYQUa" alt="Description of image 1" style={imageStyle} />
+      <img src="https://drive.google.com/uc?export=view&id=1x01s0rGrsSkbXo0yh4PgAPTMKGEDX8uh" alt="Description of image 2" style={imageStyle} />
     </div>
   );
 }

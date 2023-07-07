@@ -20,13 +20,13 @@ function App() {
         <Route path="/expenses" element={<ExpensesPage />} />
         <Route path="/budget" element={<BudgetBreakdownPage />} />
         <Route path="/tracker" element={<ExpenseTracker />} />
-        {/* other routes can be added here */}
+        
       </Routes>
     </Router>
   );
 }
 
-// Custom styles for the navigation links
+
 const linkStyle = {
   color: '#fff',
   textDecoration: 'none',

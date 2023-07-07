@@ -1,13 +1,9 @@
-
-
-
 import React, { useContext } from "react";
 import ExpenseForm from "./ExpenseForm";
 import ExpenseList from "./ExpenseList";
 import BudgetForm from "./BudgetForm";
 import ExpenseSummary from "./ExpenseSummary.js";
 import { ExpenseContext } from './ExpenseProvider';
-import piggyBankImage from './images/piggy-bank-and-budget-money.jpg';
 
 function ExpenseTracker() {
   const { expenses, addExpense, deleteExpense, budget, updateBudget } = useContext(ExpenseContext);
@@ -20,7 +16,7 @@ function ExpenseTracker() {
   const remainingBudget = budget - totalExpenses;
 
   return (
-    <div style={{ backgroundImage: `url(${piggyBankImage})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh' }}>
+    <div style={{ backgroundImage: "url(https://drive.google.com/uc?export=view&id=1Jwzx_iC7xqbhg_wgHL0Ijs2USW7B3xQ4)", backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh' }}>
       <h1 style={{ color: 'white' }}>Expense Tracker</h1>
       <BudgetForm updateBudget={updateBudget} />
 
@@ -64,4 +60,3 @@ function ExpenseTracker() {
 }
 
 export default ExpenseTracker;
-
